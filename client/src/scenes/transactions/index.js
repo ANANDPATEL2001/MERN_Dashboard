@@ -22,6 +22,7 @@ const Transactions = () => {
         sort: JSON.stringify(sort),
         search,
     });
+    console.log("Transaction data is : ", data)
 
     const columns = [
         {
@@ -62,20 +63,23 @@ const Transactions = () => {
                 sx={{
                     "& .MuiDataGrid-root": {
                         border: "none",
+                        borderRadius: "5rem",
                     },
                     "& .MuiDataGrid-cell": {
                         borderBottom: "none",
                     },
                     "& .MuiDataGrid-columnHeaders": {
-                        backgroundColor: theme.palette.background.alt,
+                        // backgroundColor: theme.palette.background.alt,
+                        backgroundColor: theme.palette.primary[1200],
                         color: theme.palette.secondary[100],
                         borderBottom: "none",
                     },
                     "& .MuiDataGrid-virtualScroller": {
-                        backgroundColor: theme.palette.grey[600],
+                        backgroundColor: theme.palette.background.alt,
                     },
                     "& .MuiDataGrid-footerContainer": {
-                        backgroundColor: theme.palette.background.alt,
+                        // backgroundColor: theme.palette.background.alt,
+                        backgroundColor: theme.palette.primary[1200],
                         color: theme.palette.secondary[100],
                         borderTop: "none",
                     },
@@ -84,13 +88,34 @@ const Transactions = () => {
                     },
                 }}
             >
-                <DataGrid
+                {/* <DataGrid
                     loading={isLoading || !data}
                     getRowId={(row) => row._id}
                     rows={(data && data.transactions) || []}
                     columns={columns}
                     rowCount={(data && data.total) || 0}
                     rowsPerPageOptions={[20, 50, 100]}
+                    pagination
+                    page={page}
+                    pageSize={pageSize}
+                    paginationMode="server"
+                    sortingMode="server"
+                    onPageChange={(newPage) => setPage(newPage)}
+                    onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+                    onSortModelChange={(newSortModel) => setSort(...newSortModel)}
+                    slots={{ toolbar: DataGridCustomToolbar }}
+                    slotProps={{
+                        toolbar: { searchInput, setSearchInput, setSearch },
+                    }}
+                /> */}
+                <DataGrid
+                    loading={isLoading || !data}
+                    getRowId={(row) => row._id}
+                    rows={(data && data.transactions) || []}
+                    columns={columns}
+                    rowCount={(data && data.transactions.rowCount) || 0}
+                    // rowsPerPageOptions={[20, 50, 100]}
+                    pageSizeOptions={[10, 20, 50, 100]}
                     pagination
                     page={page}
                     pageSize={pageSize}

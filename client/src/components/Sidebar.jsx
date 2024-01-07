@@ -1,4 +1,3 @@
-import React from "react";
 import {
     Box,
     Divider,
@@ -30,6 +29,7 @@ import {
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
 import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.jpeg";
 
@@ -104,6 +104,8 @@ const Sidebar = ({
     const navigate = useNavigate();
     const theme = useTheme();
 
+    // console.log("pathname is :", pathname)
+
     useEffect(() => {
         setActive(pathname.substring(1));
     }, [pathname]);
@@ -133,7 +135,7 @@ const Sidebar = ({
                             <FlexBetween color={theme.palette.secondary.main}>
                                 <Box display="flex" alignItems="center" gap="0.5rem">
                                     <Typography variant="h4" fontWeight="bold">
-                                        ECOMVISION
+                                        MERN Dashboard
                                     </Typography>
                                 </Box>
                                 {!isNonMobile && (

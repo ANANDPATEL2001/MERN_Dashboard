@@ -156,7 +156,8 @@ const Dashboard = () => {
                             borderBottom: "none",
                         },
                         "& .MuiDataGrid-columnHeaders": {
-                            backgroundColor: theme.palette.background.alt,
+                            // backgroundColor: theme.palette.background.alt,
+                            backgroundColor: theme.palette.primary[1200],
                             color: theme.palette.secondary[100],
                             borderBottom: "none",
                         },
@@ -164,7 +165,8 @@ const Dashboard = () => {
                             backgroundColor: theme.palette.background.alt,
                         },
                         "& .MuiDataGrid-footerContainer": {
-                            backgroundColor: theme.palette.background.alt,
+                            // backgroundColor: theme.palette.background.alt,
+                            backgroundColor: theme.palette.primary[1200],
                             color: theme.palette.secondary[100],
                             borderTop: "none",
                         },

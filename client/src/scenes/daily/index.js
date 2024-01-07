@@ -24,7 +24,7 @@ const Daily = () => {
     };
     const totalUnitsLine = {
       id: "totalUnits",
-      color: theme.palette.secondary[600],
+      color: theme.palette.primary[1000],
       data: [],
     };
 
@@ -108,7 +108,8 @@ const Daily = () => {
               },
               tooltip: {
                 container: {
-                  color: theme.palette.primary.main,
+                  // color: theme.palette.primary.main,
+                  color: "black",
                 },
               },
             }}
