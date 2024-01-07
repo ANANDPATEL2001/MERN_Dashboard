@@ -32,6 +32,7 @@ const Daily = () => {
       const dateFormatted = new Date(date);
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = date.substring(date.indexOf("-") + 1);
+        // console.log("splitDate & typeOf", splitDate, typeof (splitDate))
 
         totalSalesLine.data = [
           ...totalSalesLine.data,

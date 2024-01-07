@@ -8,7 +8,7 @@ export const api = createApi({
     reducerPath: "adminApi",
 
     // These tags are based on the state & used to query sepecific data (User here)
-    tagTypes: ["User", "Products", "Customers", "Transactions", "Geography", "Sales"],
+    tagTypes: ["User", "Products", "Customers", "Transactions", "Geography", "Sales", "Admins", "Performance", "Dashboard"],
 
     // Endpoints are the place where we have our actual working logic (Callback function here)
     endpoints: (build) => ({
@@ -41,7 +41,19 @@ export const api = createApi({
             query: () => `sales/sales`,
             providesTags: ["Sales"]
         }),
+        getAdmins: build.query({
+            query: () => `management/admins`,
+            providesTags: ["Admins"]
+        }),
+        getUserPerformance: build.query({
+            query: (id) => `management/performance/${id}`,
+            providesTags: ["Performance"]
+        }),
+        getDashboard: build.query({
+            query: (id) => `general/dashboard`,
+            providesTags: ["Dashboard"]
+        }),
     })
 })
 
-export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery, useGetTransactionsQuery, useGetGeographyQuery, useGetSalesQuery } = api;
+export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery, useGetTransactionsQuery, useGetGeographyQuery, useGetSalesQuery, useGetAdminsQuery, useGetUserPerformanceQuery, useGetDashboardQuery } = api;

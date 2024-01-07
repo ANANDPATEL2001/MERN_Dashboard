@@ -24,7 +24,9 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     };
 
     Object.values(monthlyData).reduce(
+      // Below acc is 'accumulator' value 
       (acc, { month, totalSales, totalUnits }) => {
+        // console.log("Accumulator type & valueis : ", typeof (acc), acc)
         const curSales = acc.sales + totalSales;
         const curUnits = acc.units + totalUnits;
 
@@ -95,6 +97,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       yFormat=" >-.2f"
       curve="catmullRom"
       enableArea={isDashboard}
+      // enableArea={true}
       axisTop={null}
       axisRight={null}
       axisBottom={{
