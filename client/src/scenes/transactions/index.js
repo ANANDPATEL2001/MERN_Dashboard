@@ -88,34 +88,13 @@ const Transactions = () => {
                     },
                 }}
             >
-                {/* <DataGrid
+                <DataGrid
                     loading={isLoading || !data}
                     getRowId={(row) => row._id}
                     rows={(data && data.transactions) || []}
                     columns={columns}
                     rowCount={(data && data.total) || 0}
                     rowsPerPageOptions={[20, 50, 100]}
-                    pagination
-                    page={page}
-                    pageSize={pageSize}
-                    paginationMode="server"
-                    sortingMode="server"
-                    onPageChange={(newPage) => setPage(newPage)}
-                    onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-                    onSortModelChange={(newSortModel) => setSort(...newSortModel)}
-                    slots={{ toolbar: DataGridCustomToolbar }}
-                    slotProps={{
-                        toolbar: { searchInput, setSearchInput, setSearch },
-                    }}
-                /> */}
-                <DataGrid
-                    loading={isLoading || !data}
-                    getRowId={(row) => row._id}
-                    rows={(data && data.transactions) || []}
-                    columns={columns}
-                    rowCount={(data && data.transactions.rowCount) || 0}
-                    // rowsPerPageOptions={[20, 50, 100]}
-                    pageSizeOptions={[10, 20, 50, 100]}
                     pagination
                     page={page}
                     pageSize={pageSize}
